@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { HiChevronDoubleDown, HiChevronDoubleUp } from "react-icons/hi2";
 import { useState } from "react";
 
-function GroupInput({ groupName, inputNames, setCvData2 }) {
+function GroupInput({ groupName, inputNames}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,14 +18,14 @@ function GroupInput({ groupName, inputNames, setCvData2 }) {
         <GroupTitleInput groupName={groupName} />
         <div className="w-5">
           <div className="cursor-pointer" onClick={toggleMenu}>
-            {isOpen ? <HiChevronDoubleDown /> : <HiChevronDoubleUp />}
+            {isOpen ? <HiChevronDoubleUp /> : <HiChevronDoubleDown />}
           </div>
         </div>
       </div>
       {isOpen && (
         <div className="flex flex-col gap-3">
           {inputNames.map((name) => (
-            <ValuesInput key={uuidv4()} name={name} setCvData1={setCvData2} />
+            <ValuesInput key={uuidv4()} name={name} />
           ))}
         </div>
       )}
@@ -36,7 +36,6 @@ function GroupInput({ groupName, inputNames, setCvData2 }) {
 GroupInput.propTypes = {
   inputNames: PropTypes.arrayOf(PropTypes.string),
   groupName: PropTypes.string,
-  setCvData2: PropTypes.func,
 };
 
 export default GroupInput;
