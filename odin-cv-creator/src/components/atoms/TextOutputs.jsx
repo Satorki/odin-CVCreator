@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-function TextOutputs({ outputValue }) {
+function TextOutputs({ outputValue, outputClasses }) {
   return (
-    <section id="output">
+    <section id="output" className={outputClasses}>
       <p>{outputValue}</p>
     </section>
   );
@@ -11,5 +11,6 @@ function TextOutputs({ outputValue }) {
 export default TextOutputs;
 
 TextOutputs.propTypes = {
-  outputValue: PropTypes.string
+  outputValue: PropTypes.string,
+  outputClasses: PropTypes.string
 };

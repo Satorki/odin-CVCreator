@@ -1,7 +1,7 @@
 function GeneralTitle() {
     return (
         <>
-        <h2 className="text-xl">General Info</h2>
+        <h2 className="text-xl flex justify-center">General Info</h2>
         </>
     )
 }

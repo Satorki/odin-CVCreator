@@ -1,58 +1,33 @@
 import { useState } from "react";
 import TextInputs from "../atoms/TextInputs";
 import TextOutputs from "../atoms/TextOutputs";
+import PropTypes from "prop-types";
 
-function GeneralInputs() {
-  const [inputs, setInputs] = useState({
-    name: "Geralt",
-    surname: "from Rivia",
-    email: "geralt@rivia.tem",
-    phone: "007 008 009",
-  });
+function GeneralInputs({ inputValue, defaultValue }) {
+  const [inputs, setInputs] = useState(defaultValue);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setInputs({
-      ...inputs,
-      [name]: value,
-    });
+    setInputs(e.target.value);
   };
 
   return (
     <div className="flex gap-10">
-      <div className="bg-blue-400 min-w-96 flex flex-col gap-3 p-5 rounded-lg">
         <TextInputs
-          inputName="Name"
+          inputName={inputValue}
           inputHandler={handleInputChange}
-          value={inputs.name}
+          value={inputs}
         />
-        <TextInputs
-          inputName="Surname"
-          inputHandler={handleInputChange}
-          value={inputs.surname}
-        />
-        <TextInputs
-          inputName="Email"
-          inputHandler={handleInputChange}
-          value={inputs.email}
-        />
-        <TextInputs
-          inputName="Phone"
-          inputHandler={handleInputChange}
-          value={inputs.phone}
-        />
-      </div>
-      <div className="bg-blue-200 rounded-lg p-5 w-full">
-        <TextOutputs outputValue={inputs.name} />
-        <TextOutputs outputValue={inputs.surname} />
-        <TextOutputs outputValue={inputs.email} />
-        <TextOutputs outputValue={inputs.phone} />
-      </div>
+        <TextOutputs outputValue={inputs} outputClasses={"text-xl"} />
     </div>
   );
 }
 
 export default GeneralInputs;
+
+GeneralInputs.propTypes = {
+  inputValue: PropTypes.string,
+  defaultValue: PropTypes.string,
+};
 
 // const [outputName, setOutputName] = useState("");
 // const [outputSurname, setOutputSurname] = useState("");

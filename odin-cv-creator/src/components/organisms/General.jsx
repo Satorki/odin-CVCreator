@@ -1,11 +1,14 @@
-import GeneralTitle from "../atoms/GeneralTitle";
 import GeneralInputs from "../molecules/GeneralInputs";
+import GeneralTitle from "../atoms/GeneralTitle";
 
 function General() {
   return (
-    <div className="flex flex-col">
-    <GeneralTitle />
-    <GeneralInputs />
+    <div>
+        <GeneralTitle />
+        <GeneralInputs inputValue={"Name"} defaultValue={"Geralt"}/>
+        <GeneralInputs inputValue={"Surname"} defaultValue={"from Riviia"}/>
+        <GeneralInputs inputValue={"Email"} defaultValue={"geralt@rivia.tem"}/>
+        <GeneralInputs inputValue={"Phone"} defaultValue={"001 002 003"}/>
     </div>
   );
 }
