@@ -1,21 +1,19 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
 
-function TextInputs({ inputName, defaultName }) {
-  const [outputName, setOutputName] = useState(defaultName);
-
-  const handleInput = (e) => {
-    setOutputName(e.target.value);
-  };
-
+function TextInputs({ inputName, inputHandler, value }) {
   return (
     <div className="flex gap-10">
-      <section id="input" className="bg-blue-400 min-w-96 p-5 flex  justify-between">
+      <section
+        id="input"
+        className="flex justify-between w-full"
+      >
         <p>{inputName}:</p>
-        <input type="text" onChange={handleInput} />
-      </section>
-      <section id="output">
-        <p>{outputName}</p>
+        <input
+          type="text"
+          name={inputName.toLowerCase()}
+          onChange={inputHandler}
+          value={value}
+        />
       </section>
     </div>
   );
@@ -25,5 +23,6 @@ export default TextInputs;
 
 TextInputs.propTypes = {
   inputName: PropTypes.string,
-  defaultName: PropTypes.string,
+  inputHandler: PropTypes.func,
+  value: PropTypes.string,
 };
