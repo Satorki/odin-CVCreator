@@ -1,4 +1,4 @@
-import GeneralInfoForm from "../atoms/GeneralInfoForm";
+import GeneralInfoForm from "../atoms/000 GeneralInfoForm";
 
 
 function GeneralInfoOutput() {

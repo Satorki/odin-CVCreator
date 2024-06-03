@@ -1,5 +1,5 @@
-import ValuesInput from "../atoms/ValuesInput";
-import GroupTitleInput from "../atoms/GroupTitleInput";
+import ValuesInput from "../atoms/DateInputs";
+import GroupTitleInput from "../atoms/000 GroupTitleInput";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
 import { HiChevronDoubleDown, HiChevronDoubleUp } from "react-icons/hi2";
