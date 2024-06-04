@@ -11,15 +11,22 @@ function TitleInputOutput({ inputValue, defaultValue }) {
     setInputs(e.target.value);
   };
 
+  const hideInputs = "scale-0"
+  const showInputs = "scale-100"
+
   return (
     <>
-    <TitleTextInput inputName={"Name"}/>
+      <div className="flex gap-10 ml-10 mr-10">
+        <div className={"flex justify-between min-w-96 bg-blue-300 p-3 " + hideInputs}>
+        <TitleTextInput inputName={inputValue} />
         <TextInput
           inputName={inputValue}
           inputHandler={handleInputChange}
           value={inputs}
         />
+        </div>
         <TextOutput outputValue={inputs} />
+      </div>
     </>
   );
 }

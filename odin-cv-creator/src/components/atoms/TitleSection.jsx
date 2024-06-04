@@ -1,7 +1,7 @@
 function TitleSection() {
   return (
     <>
-      <h2 className="text-xl flex justify-center">General Info</h2>
+      <h2>General Info</h2>
     </>
   );
 }

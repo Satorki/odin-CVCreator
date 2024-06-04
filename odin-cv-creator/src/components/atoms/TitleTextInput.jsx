@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 function TitleTextInput({ inputName }) {
   return (
     <>
-      <p>{inputName}:</p>
+      <p className="text-lg">{inputName}:</p>
     </>
   );
 }
