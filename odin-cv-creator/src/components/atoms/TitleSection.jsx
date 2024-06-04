@@ -1,9 +1,15 @@
-function TitleSection() {
+import PropTypes from "prop-types";
+
+function TitleSection({title}) {
   return (
     <>
-      <h2>General Info</h2>
+      <h2>{title}</h2>
     </>
   );
 }
 
 export default TitleSection;
+
+TitleSection.propTypes = {
+  inputName: PropTypes.string
+};

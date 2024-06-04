@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
-function TextOutput({ outputValue }) {
+function TextOutput({ outputValue, prefixValue }) {
   return (
     <>
-      <p>{outputValue}</p>
+      <p>{prefixValue}{outputValue}</p>
     </>
   );
 }
@@ -11,5 +11,6 @@ function TextOutput({ outputValue }) {
 export default TextOutput;
 
 TextOutput.propTypes = {
-  outputValue: PropTypes.string
+  outputValue: PropTypes.string,
+  prefixValue: PropTypes.string
 };
