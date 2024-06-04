@@ -1,14 +1,11 @@
-import GeneralInputs from "../molecules/GeneralInputs";
-import GeneralTitle from "../atoms/GeneralTitle";
+import TitleSection from "../atoms/TitleSection";
+import TitleInputOutput from "../molecules/TitleInputOutput";
 
 function General() {
   return (
     <div>
-        <GeneralTitle />
-        <GeneralInputs inputValue={"Name"} defaultValue={"Geralt"}/>
-        <GeneralInputs inputValue={"Surname"} defaultValue={"from Riviia"}/>
-        <GeneralInputs inputValue={"Email"} defaultValue={"geralt@rivia.tem"}/>
-        <GeneralInputs inputValue={"Phone"} defaultValue={"001 002 003"}/>
+        <TitleSection />
+        <TitleInputOutput inputValue={"Name"} defaultValue={"Geralt"}/>
     </div>
   );
 }
