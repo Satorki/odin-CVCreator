@@ -1,14 +1,25 @@
-import TitleApp from "../components/atoms/TitleApp";
-import General from "../components/organisms/General";
-import Experience from "../components/organisms/Experience";
+import AppTitle from "../components/atoms/AppTitle";
+import EducationCvSection from "../components/organisms/EducationCvSection";
+import EducationInfoSection from "../components/organisms/EducationInfoSection";
+import ExperienceCvSection from "../components/organisms/ExperienceCvSection";
+import ExperienceInfoSection from "../components/organisms/ExperienceInfoSection";
+import GeneralCvSection from "../components/organisms/GeneralCvSection";
+import GeneralInfoSection from "../components/organisms/GeneralInfoSection";
 
 function App() {
   return (
     <>
-      <TitleApp />
-      <div className="bg-gradient-to-r from-slate-600 to-slate-300">
-      <General />
-      <Experience />
+      <AppTitle />
+      <div className="flex bg-gradient-to-r from-slate-600 to-slate-300">
+        <GeneralInfoSection />
+        {/* <ExperienceInfoSection />
+        <EducationInfoSection /> */}
+
+        <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
+          <GeneralCvSection />
+          {/* <ExperienceCvSection />
+          <EducationCvSection /> */}
+        </div>
       </div>
     </>
   );
