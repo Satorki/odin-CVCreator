@@ -1,12 +1,15 @@
+import { useContext } from "react";
 import CvText from "../atoms/CvText";
+import { InputsContext } from "./InputsConnectionInfoCv";
 
 const GeneralCvSection = () => {
+  const {name, surname, email, phone} = useContext(InputsContext)
   return (
     <>
-      <CvText outputValue={"inputValue"} />
-      <CvText outputValue={"inputValue"} />
-      <CvText prefixValue={"Email: "} outputValue={"inputValue"} />
-      <CvText prefixValue={"Tel: "} outputValue={"inputValue"} />
+      <CvText outputValue={name} />
+      <CvText outputValue={surname} />
+      <CvText prefixValue={"Email: "} outputValue={email} />
+      <CvText prefixValue={"Tel: "} outputValue={phone} />
     </>
   );
 };

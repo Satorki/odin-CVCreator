@@ -1,16 +1,17 @@
 import AppTitle from "../components/atoms/AppTitle";
-import EducationCvSection from "../components/organisms/EducationCvSection";
-import EducationInfoSection from "../components/organisms/EducationInfoSection";
-import ExperienceCvSection from "../components/organisms/ExperienceCvSection";
-import ExperienceInfoSection from "../components/organisms/ExperienceInfoSection";
+// import EducationCvSection from "../components/organisms/EducationCvSection";
+// import EducationInfoSection from "../components/organisms/EducationInfoSection";
+// import ExperienceCvSection from "../components/organisms/ExperienceCvSection";
+// import ExperienceInfoSection from "../components/organisms/ExperienceInfoSection";
 import GeneralCvSection from "../components/organisms/GeneralCvSection";
 import GeneralInfoSection from "../components/organisms/GeneralInfoSection";
+import { InputsConnectionInfoCv } from "../components/organisms/InputsConnectionInfoCv";
 
 function App() {
   return (
     <>
       <AppTitle />
-      <InputConnectionInfoCv>
+      <InputsConnectionInfoCv>
         <div className="flex bg-gradient-to-r from-slate-600 to-slate-300">
           <GeneralInfoSection />
           {/* <ExperienceInfoSection />
@@ -22,7 +23,7 @@ function App() {
           <EducationCvSection /> */}
           </div>
         </div>
-      </InputConnectionInfoCv>
+      </InputsConnectionInfoCv>
     </>
   );
 }
