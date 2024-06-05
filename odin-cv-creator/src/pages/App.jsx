@@ -10,17 +10,19 @@ function App() {
   return (
     <>
       <AppTitle />
-      <div className="flex bg-gradient-to-r from-slate-600 to-slate-300">
-        <GeneralInfoSection />
-        {/* <ExperienceInfoSection />
+      <InputConnectionInfoCv>
+        <div className="flex bg-gradient-to-r from-slate-600 to-slate-300">
+          <GeneralInfoSection />
+          {/* <ExperienceInfoSection />
         <EducationInfoSection /> */}
 
-        <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
-          <GeneralCvSection />
-          {/* <ExperienceCvSection />
+          <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
+            <GeneralCvSection />
+            {/* <ExperienceCvSection />
           <EducationCvSection /> */}
+          </div>
         </div>
-      </div>
+      </InputConnectionInfoCv>
     </>
   );
 }

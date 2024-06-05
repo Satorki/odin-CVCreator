@@ -10,8 +10,6 @@ const GeneralInfoSection = () => {
     setName(e.target.value)
   }
 
-
-
   return (
     <div className="bg-slate-400 min-w-80 m-5 p-3 rounded-xl shadow-xl">
       <div className="pb-5">
