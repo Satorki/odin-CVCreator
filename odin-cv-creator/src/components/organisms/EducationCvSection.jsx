@@ -1,14 +1,18 @@
-import CvText from "../atoms/CvText"
+import { useContext } from "react";
+import CvText from "../atoms/CvText";
+import { InputsContext } from "./InputsConnectionInfoCv";
 
 const EducationCvSection = () => {
+  const { school, specialization, dateToSchool, dateFromSchool } =
+    useContext(InputsContext);
   return (
     <>
-      <CvText prefixValue={"Company: "} outputValue={"inputValue"} />
-      <CvText prefixValue={"Position: "} outputValue={"inputValue"} />
-      <CvText prefixValue={"Date to: "} outputValue={"inputValue"} />
-      <CvText prefixValue={"Date from: "} outputValue={"inputValue"} />
+      <CvText prefixValue={"School: "} outputValue={school} />
+      <CvText prefixValue={"Specialization: "} outputValue={specialization} />
+      <CvText prefixValue={"Date to: "} outputValue={dateToSchool} />
+      <CvText prefixValue={"Date from: "} outputValue={dateFromSchool} />
     </>
-  )
-}
+  );
+};
 
-export default EducationCvSection
+export default EducationCvSection;
