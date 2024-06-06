@@ -1,9 +1,23 @@
-import GeneralCvSection from "../molecules/GeneralCvSection";
+import CvSectionTexts from "../molecules/CvSectionTexts";
 
 const CvSectionListing = () => {
   return (
     <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
-      <GeneralCvSection />
+      <CvSectionTexts
+        dataName={"General"}
+        prefixValu3={"Email: "}
+        prefixValue4={"Phone"}
+      />
+      <CvSectionTexts
+        dataName={"Experiance"}
+        prefixValue3={"Date to: "}
+        prefixValue4={"Date from: "}
+      />
+      <CvSectionTexts
+        dataName={"Education"}
+        prefixValue3={"Date to: "}
+        prefixValue4={"Date from: "}
+      />
     </div>
   );
 };

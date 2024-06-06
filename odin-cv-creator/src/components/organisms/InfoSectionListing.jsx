@@ -1,7 +1,26 @@
+import InfoSectionCard from "../molecules/InfoSectionCard";
+import inputsData from "../../assets/inputsData.json";
+
 const InfoSectionListing = () => {
+
+  
   return (
-    <div className="flex bg-gradient-to-r from-slate-600 to-slate-300">
-        <p>zupa</p>
+    <div className="">
+      <InfoSectionCard
+        title={"General Info"}
+        inputsData={inputsData.General}
+        dataName={"General"}
+      />
+      <InfoSectionCard
+        title={"Experience Info"}
+        inputsData={inputsData.Experience}
+        dataName={"Experience"}
+      />
+      <InfoSectionCard
+        title={"School Info"}
+        inputsData={inputsData.Education}
+        dataName={"Education"}
+      />
     </div>
   );
 };

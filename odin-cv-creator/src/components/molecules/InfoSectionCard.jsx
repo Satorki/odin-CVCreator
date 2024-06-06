@@ -1,10 +1,9 @@
 import CardTitle from "../atoms/CardTitle";
-import InfoTitleAndInput from "./InputSection";
-import generalInputsData from "../../assets/generalInputsData.json";
 import { InputsContext } from "../organisms/InputsConnections";
 import { useContext } from "react";
+import InfoInput from "../atoms/InfoInput";
 
-const InfoSectionCard = ({ title }) => {
+const InfoSectionCard = ({ title, inputsData, dataName }) => {
   const { states, handleStateChange } = useContext(InputsContext);
 
   const handleChange = (id, e) => {
@@ -15,17 +14,17 @@ const InfoSectionCard = ({ title }) => {
     <>
       <div className="bg-slate-400 min-w-80 m-5 p-3 rounded-xl shadow-xl">
         <div className="pb-5">
-          <CardTitle title={title}/>
+          <CardTitle title={title} />
         </div>
         <div className="flex flex-col gap-2">
-          {generalInputsData.map((info) => (
-            <InfoTitleAndInput
+          {inputsData.map((info) => (
+            <InfoInput
               inputTitle={info.Title}
               key={info.id}
               inputHandler={(e) => {
                 handleChange(info.id, e);
               }}
-              inputValue={states[info.id]}
+              inputValue={states[dataName]}
             />
           ))}
         </div>

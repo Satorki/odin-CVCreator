@@ -1,19 +1,26 @@
 import { createContext, useState } from "react";
-import generalInputsData from "../../assets/generalInputsData.json";
+import inputsData from "../../assets/inputsData.json";
 
 const InputsContext = createContext();
 
 const InputsConnections = ({ children }) => {
-  const [states, setStates] = useState(
-    generalInputsData.map((info) => info.default)
-  );
+  const initialState = {
+    General: inputsData.General.map((info) => info.default),
+    Experiance: inputsData.Experience.map((info) => info.default),
+    Education: inputsData.Education.map((info) => info.default),
+  };
 
-  const handleStateChange = (id, value) => {
+  const [states, setStates] = useState(initialState);
+
+  const handleStateChange = (section, id, value) => {
     setStates((prevStates) => ({
       ...prevStates,
-      [id]: value,
+      [section]: prevStates[section].map((item, index) =>
+        index === id ? value : item
+      ),
     }));
   };
+
 
   return (
     <InputsContext.Provider

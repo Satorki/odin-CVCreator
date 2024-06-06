@@ -1,0 +1,68 @@
+{
+    "General": [
+        {
+            "id": "0",
+            "Title": "Name",
+            "default": "Seba"
+        },
+        {
+            "id": "1",
+            "Title": "Surname",
+            "default": "keeee"
+        },
+        {
+            "id": "2",
+            "Title": "Email",
+            "default": "sebakeee@ssss.com"
+        },
+        {
+            "id": "3",
+            "Title": "Phone",
+            "default": "no phone"
+        }
+    ],
+    "Experience": [
+        {
+            "id": "4",
+            "Title": "Company",
+            "default": "CodersLab"
+        },
+        {
+            "id": "5",
+            "Title": "Position",
+            "default": "Senior Frontend React Developer"
+        },
+        {
+            "id": "6",
+            "Title": "Date To",
+            "default": "Now"
+        },
+        {
+            "id": "7",
+            "Title": "Date From",
+            "default": "01.10.2024"
+        }
+    ],
+    "Education" : [
+        {
+            "id": "8",
+            "Title" : "School",
+            "default": "MIT"
+        },
+        {
+            "id": "9",
+            "Title" : "Specialization",
+            "default": "Frontend Engineering"
+        },
+        {
+            "id": "10",
+            "Title" : "Date To",
+            "default": "01.10.2024"
+        },
+        {
+            "id": "11",
+            "Title" : "Date From",
+            "default": "01.02.2024"
+        }
+    ]
+}
