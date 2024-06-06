@@ -1,9 +1,15 @@
-function InfoInput({ inputHandler, InputValue }) {
+const InfoInput = ({ inputHandler, inputTitle, inputValue }) => {
   return (
-    <>
-      <input type="text" onChange={inputHandler} value={InputValue} className="border border-black"/>
-    </>
+    <div className="flex justify-between">
+      <p className="text-lg">{inputTitle}</p>
+      <input
+        type="text"
+        onChange={inputHandler}
+        value={inputValue}
+        className="border border-black"
+      />
+    </div>
   );
-}
+};
 
 export default InfoInput;

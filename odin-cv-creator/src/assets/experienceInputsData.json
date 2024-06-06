@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "Title" : "Company"
+    },
+    {
+        "id": "2",
+        "Title" : "Position"
+    },
+    {
+        "id": "3",
+        "Title" : "Date To"
+    },
+    {
+        "id": "4",
+        "Title" : "Date From"
+    }
+]
