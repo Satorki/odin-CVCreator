@@ -3,7 +3,7 @@ import inputsData from "../../assets/inputsData.json";
 
 const InputsContext = createContext();
 
-const InputsConnections = ({ children }) => {
+const InputsControl = ({ children }) => {
   const initialState = {
     General: inputsData.General.map((info) => info.default),
   };
@@ -31,4 +31,4 @@ const InputsConnections = ({ children }) => {
   );
 };
 
-export { InputsConnections, InputsContext };
+export { InputsControl, InputsContext };

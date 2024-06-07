@@ -1,4 +1,4 @@
-import CvSectionTexts from "../molecules/CvSectionTexts";
+import CvSectionTexts from "../molecules/CvPersonalText";
 
 const CvSectionListing = () => {
   return (

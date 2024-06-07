@@ -39,15 +39,24 @@ const EduExpSectionCard = ({
     setAddedElements((prevElements) => {
       let firstValue, secondValue;
       if (dataName === "Education") {
-        firstValue = inputValues[8];  // Upewnij się, że indeks 4 istnieje
-        secondValue = inputValues[9]; // Upewnij się, że indeks 5 istnieje
+        firstValue = inputValues[8];
+        secondValue = inputValues[9]
       } else {
-        firstValue = inputValues[4];  // Upewnij się, że indeks 8 istnieje
-        secondValue = inputValues[5]; // Upewnij się, że indeks 9 istnieje
+        firstValue = inputValues[4];
+        secondValue = inputValues[5];
       }
       return [...prevElements, { firstValue, secondValue }];
     });
   };
+
+  
+  
+  const deleteInfo = (index) => {
+    setAddedElements((prevElements) =>
+      prevElements.filter((_, i) => i !== index)
+    );
+  };
+
 
   return (
     <>
@@ -78,6 +87,7 @@ const EduExpSectionCard = ({
               key={index}
               firstValue={element.firstValue}
               secondValue={element.secondValue}
+              deleteInfo={() => deleteInfo(index)}
             />
           ))}
         </div>

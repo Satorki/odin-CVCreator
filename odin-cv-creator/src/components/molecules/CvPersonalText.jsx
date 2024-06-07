@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import SingleCvText from "../atoms/SingleCvText";
-import { InputsContext } from "../organisms/InputsConnections";
+import { InputsContext } from "../organisms/InputsControl";
 
-const CvSectionTexts = ({
+const CvPersonalText = ({
   dataName,
   prefixValue1,
   prefixValue2,
@@ -10,6 +10,8 @@ const CvSectionTexts = ({
   prefixValue4,
 }) => {
   const { states } = useContext(InputsContext);
+
+  console.log(states);
 
   return (
     <>
@@ -33,4 +35,4 @@ const CvSectionTexts = ({
   );
 };
 
-export default CvSectionTexts;
+export default CvPersonalText;

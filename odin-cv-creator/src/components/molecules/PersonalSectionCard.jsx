@@ -1,5 +1,5 @@
 import CardTitle from "../atoms/CardTitle";
-import { InputsContext } from "../organisms/InputsConnections";
+import { InputsContext } from "../organisms/InputsControl";
 import { useContext } from "react";
 import InfoInput from "../atoms/InfoInput";
 
@@ -21,7 +21,7 @@ const PersonalSectionCard = ({
       <div className="bg-slate-400 min-w-80 m-5 p-3 rounded-xl shadow-xl">
         <div className="pb-5">
           <CardTitle
-          handleCardToggle={handleCardToggle}
+            handleCardToggle={handleCardToggle}
             title={title}
             isVisible={isVisible}
           />
