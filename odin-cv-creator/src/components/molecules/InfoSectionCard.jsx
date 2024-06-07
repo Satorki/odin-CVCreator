@@ -6,8 +6,8 @@ import InfoInput from "../atoms/InfoInput";
 const InfoSectionCard = ({ title, inputsData, dataName }) => {
   const { states, handleStateChange } = useContext(InputsContext);
 
-  const handleChange = (id, e) => {
-    handleStateChange(id, e.target.value);
+  const handleChange = (index, e) => {
+    handleStateChange(dataName, index, e.target.value);
   };
 
   return (
@@ -17,14 +17,14 @@ const InfoSectionCard = ({ title, inputsData, dataName }) => {
           <CardTitle title={title} />
         </div>
         <div className="flex flex-col gap-2">
-          {inputsData.map((info) => (
+          {inputsData.map((info, index) => (
             <InfoInput
               inputTitle={info.Title}
               key={info.id}
               inputHandler={(e) => {
-                handleChange(info.id, e);
+                handleChange(index, e);
               }}
-              inputValue={states[dataName]}
+              inputValue={states[dataName][index]}
             />
           ))}
         </div>

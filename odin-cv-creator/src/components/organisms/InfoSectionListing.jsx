@@ -11,16 +11,12 @@ const InfoSectionListing = () => {
         inputsData={inputsData.General}
         dataName={"General"}
       />
-      <InfoSectionCard
+      {/* <InfoSectionCard
         title={"Experience Info"}
-        inputsData={inputsData.Experience}
-        dataName={"Experience"}
       />
       <InfoSectionCard
         title={"School Info"}
-        inputsData={inputsData.Education}
-        dataName={"Education"}
-      />
+      /> */}
     </div>
   );
 };

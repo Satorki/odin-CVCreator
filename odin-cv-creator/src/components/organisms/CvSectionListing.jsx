@@ -5,10 +5,10 @@ const CvSectionListing = () => {
     <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
       <CvSectionTexts
         dataName={"General"}
-        prefixValu3={"Email: "}
-        prefixValue4={"Phone"}
+        prefixValue3={"Email: "}
+        prefixValue4={"Phone: "}
       />
-      <CvSectionTexts
+      {/* <CvSectionTexts
         dataName={"Experiance"}
         prefixValue3={"Date to: "}
         prefixValue4={"Date from: "}
@@ -17,7 +17,7 @@ const CvSectionListing = () => {
         dataName={"Education"}
         prefixValue3={"Date to: "}
         prefixValue4={"Date from: "}
-      />
+      /> */}
     </div>
   );
 };
