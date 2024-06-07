@@ -6,7 +6,7 @@ const InfoInput = ({ inputHandler, inputTitle, inputValue }) => {
         type="text"
         onChange={inputHandler}
         value={inputValue}
-        className="border border-black"
+        className="border border-black w-44"
       />
     </div>
   );
