@@ -1,7 +1,8 @@
 import PersonalSectionCard from "../molecules/PersonalSectionCard";
 import inputsData from "../../assets/inputsData.json";
-import EduExpSectionCard from "../molecules/EduExpSectionCard";
+import EducationSectionCard from "../molecules/EducationSectionCard";
 import { useState } from "react";
+import ExperienceSectionCard from "../molecules/ExperienceSectionCard";
 
 const InfoSectionListing = () => {
   const [visibleCard, setVisibleCard] = useState("General");
@@ -19,18 +20,18 @@ const InfoSectionListing = () => {
         inputsData={inputsData.General}
         dataName={"General"}
       />
-      <EduExpSectionCard
+      <ExperienceSectionCard
         isVisible={visibleCard === "Experience"}
         handleCardToggle={() => handleCardToggle("Experience")}
         title={"Experience Info"}
-        inputsData={inputsData.Experience}
+        inputsData={inputsData.Education}
+        dataName={"Education"}
       />
-      <EduExpSectionCard
+      <EducationSectionCard
         isVisible={visibleCard === "Education"}
         handleCardToggle={() => handleCardToggle("Education")}
         title={"School Info"}
-        inputsData={inputsData.Education}
-        dataName={"Education"}
+        inputsData={inputsData.Experience}
       />
     </div>
   );

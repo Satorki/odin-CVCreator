@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardTitle from "../atoms/CardTitle";
 import InfoCardButtons from "../atoms/InfoCardButtons";
 import InfoInput from "../atoms/InfoInput";
 import AddedInfo from "../atoms/AddedInfo";
+import { InputsContext } from "../organisms/InputsControl";
 
-const EduExpSectionCard = ({
+const ExperienceSectionCard = ({
   title,
   inputsData,
   handleCardToggle,
   isVisible,
-  dataName
+  dataName,
 }) => {
   const [inputValues, setInputValues] = useState(() =>
     inputsData.reduce((acc, input) => {
@@ -37,26 +38,32 @@ const EduExpSectionCard = ({
 
   const addInfo = () => {
     setAddedElements((prevElements) => {
-      let firstValue, secondValue;
+      let firstValue, secondValue, dataTo, dataFrom;
       if (dataName === "Education") {
         firstValue = inputValues[8];
-        secondValue = inputValues[9]
+        secondValue = inputValues[9];
+        dataTo = inputValues[10];
+        dataFrom = inputValues[11];
       } else {
         firstValue = inputValues[4];
         secondValue = inputValues[5];
+        dataTo = inputValues[6];
+        dataFrom = inputValues[7];
       }
-      return [...prevElements, { firstValue, secondValue }];
+      return [...prevElements, { firstValue, secondValue, dataTo, dataFrom }];
     });
   };
 
-  
-  
   const deleteInfo = (index) => {
     setAddedElements((prevElements) =>
       prevElements.filter((_, i) => i !== index)
     );
   };
 
+  const { setTransferedElements } = useContext(InputsContext);
+  useEffect(() => {
+    setTransferedElements(addedElements);
+  }, [addedElements, setTransferedElements]);
 
   return (
     <>
@@ -83,12 +90,14 @@ const EduExpSectionCard = ({
         )}
         <div>
           {addedElements.map((element, index) => (
-            <AddedInfo
-              key={index}
-              firstValue={element.firstValue}
-              secondValue={element.secondValue}
-              deleteInfo={() => deleteInfo(index)}
-            />
+            <>
+              <AddedInfo
+                key={index}
+                firstValue={element.firstValue}
+                secondValue={element.secondValue}
+                deleteInfo={() => deleteInfo(index)}
+              />
+            </>
           ))}
         </div>
       </div>
@@ -96,4 +105,4 @@ const EduExpSectionCard = ({
   );
 };
 
-export default EduExpSectionCard;
+export default ExperienceSectionCard;

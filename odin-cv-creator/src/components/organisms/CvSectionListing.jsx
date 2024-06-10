@@ -1,23 +1,40 @@
-import CvSectionTexts from "../molecules/CvPersonalText";
+import { useContext } from "react";
+import CvEduExpText from "../molecules/CvEduExpText";
+import CvPersonalText from "../molecules/CvPersonalText";
+import { InputsContext } from "./InputsControl";
 
 const CvSectionListing = () => {
+  const { transferedElements } = useContext(InputsContext);
+
   return (
     <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
-      <CvSectionTexts
+      <CvPersonalText
         dataName={"General"}
         prefixValue3={"Email: "}
         prefixValue4={"Phone: "}
       />
-      {/* <CvSectionTexts
-        dataName={"Experiance"}
-        prefixValue3={"Date to: "}
-        prefixValue4={"Date from: "}
-      />
-      <CvSectionTexts
-        dataName={"Education"}
-        prefixValue3={"Date to: "}
-        prefixValue4={"Date from: "}
-      /> */}
+      {transferedElements.map((element, index) => (
+        <CvEduExpText
+          key={index}
+          outputValue1={element.firstValue}
+          outputValue2={element.secondValue}
+          prefixValue3={"Date to: "}
+          outputValue3={element.dataTo}
+          prefixValue4={"Date from: "}
+          outputValue4={element.dataFrom}
+        />
+      ))}
+      {transferedElements.map((element, index) => (
+        <CvEduExpText
+          key={index}
+          outputValue1={element.firstValue}
+          outputValue2={element.secondValue}
+          prefixValue3={"Date to: "}
+          outputValue3={element.dataTo}
+          prefixValue4={"Date from: "}
+          outputValue4={element.dataFrom}
+        />
+      ))}
     </div>
   );
 };
