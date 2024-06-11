@@ -4,7 +4,8 @@ import CvPersonalText from "../molecules/CvPersonalText";
 import { InputsContext } from "./InputsControl";
 
 const CvSectionListing = () => {
-  const { transferedElements } = useContext(InputsContext);
+  const { educationList } = useContext(InputsContext);
+  const { experienceList } = useContext(InputsContext);
 
   return (
     <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
@@ -13,7 +14,7 @@ const CvSectionListing = () => {
         prefixValue3={"Email: "}
         prefixValue4={"Phone: "}
       />
-      {transferedElements.map((element, index) => (
+      {experienceList.map((element, index) => (
         <CvEduExpText
           key={index}
           outputValue1={element.firstValue}
@@ -24,7 +25,7 @@ const CvSectionListing = () => {
           outputValue4={element.dataFrom}
         />
       ))}
-      {transferedElements.map((element, index) => (
+      {educationList.map((element, index) => (
         <CvEduExpText
           key={index}
           outputValue1={element.firstValue}

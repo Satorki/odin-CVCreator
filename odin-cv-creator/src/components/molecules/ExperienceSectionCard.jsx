@@ -10,7 +10,6 @@ const ExperienceSectionCard = ({
   inputsData,
   handleCardToggle,
   isVisible,
-  dataName,
 }) => {
   const [inputValues, setInputValues] = useState(() =>
     inputsData.reduce((acc, input) => {
@@ -34,22 +33,18 @@ const ExperienceSectionCard = ({
     }));
   };
 
-  const [addedElements, setAddedElements] = useState([]);
+
+  const [addedElements, setAddedElements] = useState([
+    { firstValue: inputsData[0].default, secondValue: inputsData[1].default, dataTo: inputsData[2].default, dataFrom: inputsData[3].default },
+  ]);
 
   const addInfo = () => {
     setAddedElements((prevElements) => {
       let firstValue, secondValue, dataTo, dataFrom;
-      if (dataName === "Education") {
-        firstValue = inputValues[8];
-        secondValue = inputValues[9];
-        dataTo = inputValues[10];
-        dataFrom = inputValues[11];
-      } else {
-        firstValue = inputValues[4];
-        secondValue = inputValues[5];
-        dataTo = inputValues[6];
-        dataFrom = inputValues[7];
-      }
+      firstValue = inputValues[4];
+      secondValue = inputValues[5];
+      dataTo = inputValues[6];
+      dataFrom = inputValues[7];
       return [...prevElements, { firstValue, secondValue, dataTo, dataFrom }];
     });
   };
@@ -60,10 +55,10 @@ const ExperienceSectionCard = ({
     );
   };
 
-  const { setTransferedElements } = useContext(InputsContext);
+  const { setExperienceList } = useContext(InputsContext);
   useEffect(() => {
-    setTransferedElements(addedElements);
-  }, [addedElements, setTransferedElements]);
+    setExperienceList(addedElements);
+  }, [addedElements, setExperienceList]);
 
   return (
     <>

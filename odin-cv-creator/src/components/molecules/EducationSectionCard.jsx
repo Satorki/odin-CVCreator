@@ -10,7 +10,6 @@ const EducationSectionCard = ({
   inputsData,
   handleCardToggle,
   isVisible,
-  dataName,
 }) => {
   const [inputValues, setInputValues] = useState(() =>
     inputsData.reduce((acc, input) => {
@@ -34,25 +33,22 @@ const EducationSectionCard = ({
     }));
   };
 
-  const [addedElements, setAddedElements] = useState([]);
+  const [addedElements, setAddedElements] = useState([
+    { firstValue: inputsData[0].default, secondValue: inputsData[1].default, dataTo: inputsData[2].default, dataFrom: inputsData[3].default },
+  ]);
 
   const addInfo = () => {
     setAddedElements((prevElements) => {
       let firstValue, secondValue, dataTo, dataFrom;
-      if (dataName === "Education") {
-        firstValue = inputValues[8];
-        secondValue = inputValues[9];
-        dataTo = inputValues[10];
-        dataFrom = inputValues[11];
-      } else {
-        firstValue = inputValues[4];
-        secondValue = inputValues[5];
-        dataTo = inputValues[6];
-        dataFrom = inputValues[7];
-      }
+      firstValue = inputValues[8];
+      secondValue = inputValues[9];
+      dataTo = inputValues[10];
+      dataFrom = inputValues[11];
       return [...prevElements, { firstValue, secondValue, dataTo, dataFrom }];
     });
   };
+
+  console.log();
 
   const deleteInfo = (index) => {
     setAddedElements((prevElements) =>
@@ -60,10 +56,10 @@ const EducationSectionCard = ({
     );
   };
 
-  const { setTransferedElements } = useContext(InputsContext);
+  const { setEducationList } = useContext(InputsContext);
   useEffect(() => {
-    setTransferedElements(addedElements);
-  }, [addedElements, setTransferedElements]);
+    setEducationList(addedElements);
+  }, [addedElements, setEducationList]);
 
   return (
     <>

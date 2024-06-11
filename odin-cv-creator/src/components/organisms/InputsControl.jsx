@@ -18,16 +18,18 @@ const InputsControl = ({ children }) => {
     });
   };
 
-  const [transferedElements, setTransferedElements] = useState([])
-  
+  const [experienceList, setExperienceList] = useState([]);
+  const [educationList, setEducationList] = useState([]);
 
   return (
     <InputsContext.Provider
       value={{
         states,
         handleStateChange,
-        transferedElements,
-        setTransferedElements
+        experienceList,
+        setExperienceList,
+        educationList,
+        setEducationList,
       }}
     >
       {children}

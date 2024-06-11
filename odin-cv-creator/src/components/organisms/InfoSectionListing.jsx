@@ -12,7 +12,7 @@ const InfoSectionListing = () => {
   };
 
   return (
-    <div className="">
+    <div className="max-w-96">
       <PersonalSectionCard
         isVisible={visibleCard === "General"}
         handleCardToggle={() => handleCardToggle("General")}
@@ -24,14 +24,14 @@ const InfoSectionListing = () => {
         isVisible={visibleCard === "Experience"}
         handleCardToggle={() => handleCardToggle("Experience")}
         title={"Experience Info"}
-        inputsData={inputsData.Education}
+        inputsData={inputsData.Experience}
         dataName={"Education"}
       />
       <EducationSectionCard
         isVisible={visibleCard === "Education"}
         handleCardToggle={() => handleCardToggle("Education")}
         title={"School Info"}
-        inputsData={inputsData.Experience}
+        inputsData={inputsData.Education}
       />
     </div>
   );
