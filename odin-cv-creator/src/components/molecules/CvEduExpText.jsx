@@ -14,7 +14,8 @@ const CvEduExpText = ({
 
   return (
     <>
-
+    <div className="flex p-3 gap-10">
+<div className="">
       <SingleCvText
         outputValue={outputValue1}
         prefixValue={prefixValue1}
@@ -23,6 +24,8 @@ const CvEduExpText = ({
         outputValue={outputValue2}
         prefixValue={prefixValue2}
       />
+      </div>
+      <div>
       <SingleCvText
         outputValue={outputValue3}
         prefixValue={prefixValue3}
@@ -31,6 +34,8 @@ const CvEduExpText = ({
         outputValue={outputValue4}
         prefixValue={prefixValue4}
       />
+      </div>
+      </div>
     </>
   );
 };

@@ -11,18 +11,23 @@ const CvPersonalText = ({
 }) => {
   const { states } = useContext(InputsContext);
 
-  console.log(states);
-
   return (
     <>
-      <SingleCvText
-        outputValue={states[dataName][0]}
-        prefixValue={prefixValue1}
-      />
-      <SingleCvText
-        outputValue={states[dataName][1]}
-        prefixValue={prefixValue2}
-      />
+      <div className="flex gap-3 pt-3 items-end pl-24">
+        <div className="">
+          <SingleCvText
+            outputValue={states[dataName][0]}
+            prefixValue={prefixValue1}
+          />
+        </div>
+        <div className="text-2xl">
+          <SingleCvText
+            outputValue={states[dataName][1]}
+            prefixValue={prefixValue2}
+          />
+        </div>
+      </div>
+      <div className="flex justify-end gap-10 p-3">
       <SingleCvText
         outputValue={states[dataName][2]}
         prefixValue={prefixValue3}
@@ -31,6 +36,7 @@ const CvPersonalText = ({
         outputValue={states[dataName][3]}
         prefixValue={prefixValue4}
       />
+      </div>
     </>
   );
 };

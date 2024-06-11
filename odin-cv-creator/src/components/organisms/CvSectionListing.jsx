@@ -8,12 +8,16 @@ const CvSectionListing = () => {
   const { experienceList } = useContext(InputsContext);
 
   return (
-    <div className="bg-slate-100 flex-1 m-5 rounded-xl p-3 shadow-lg">
+    <div className="bg-slate-100 flex-1 m-5 rounded-xl shadow-lg">
+      <div className="border-b-2 border-black text-center">
       <CvPersonalText
         dataName={"General"}
         prefixValue3={"Email: "}
         prefixValue4={"Phone: "}
       />
+      </div>
+      <div className="bg-blue-200">
+      <h3 className="text-lg pt-5 pl-5 border-b w-96 border-black">Experience</h3>
       {experienceList.map((element, index) => (
         <CvEduExpText
           key={index}
@@ -25,6 +29,9 @@ const CvSectionListing = () => {
           outputValue4={element.dataFrom}
         />
       ))}
+      </div>
+      <div className="mb-5 bg-rose-200">
+      <h3 className="text-lg pt-5 pl-5 border-b w-96 border-black">Education</h3>
       {educationList.map((element, index) => (
         <CvEduExpText
           key={index}
@@ -36,6 +43,7 @@ const CvSectionListing = () => {
           outputValue4={element.dataFrom}
         />
       ))}
+      </div>
     </div>
   );
 };

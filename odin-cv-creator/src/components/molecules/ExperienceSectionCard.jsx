@@ -47,6 +47,7 @@ const ExperienceSectionCard = ({
       dataFrom = inputValues[7];
       return [...prevElements, { firstValue, secondValue, dataTo, dataFrom }];
     });
+    clearInputs()
   };
 
   const deleteInfo = (index) => {
@@ -62,8 +63,8 @@ const ExperienceSectionCard = ({
 
   return (
     <>
-      <div className="bg-slate-400 min-w-80 m-5 p-3 rounded-xl shadow-xl">
-        <div className="pb-5">
+      <div className="bg-slate-400 min-w-80 m-5 rounded-xl shadow-xl">
+        <div className="p-3">
           <CardTitle
             handleCardToggle={handleCardToggle}
             title={title}
@@ -71,7 +72,7 @@ const ExperienceSectionCard = ({
           />
         </div>
         {isVisible && (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 p-3">
             {inputsData.map((info) => (
               <InfoInput
                 inputTitle={info.Title}
@@ -83,7 +84,7 @@ const ExperienceSectionCard = ({
             <InfoCardButtons clearInputs={clearInputs} addInfo={addInfo} />
           </div>
         )}
-        <div>
+        <div className="rounded-t-xl rounded-b-xl border-t-4 border-blue-600 pr-3 pl-3 pb-3 bg-blue-400">
           {addedElements.map((element, index) => (
             <>
               <AddedInfo

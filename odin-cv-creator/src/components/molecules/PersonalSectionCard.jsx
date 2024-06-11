@@ -18,8 +18,8 @@ const PersonalSectionCard = ({
 
   return (
     <>
-      <div className="bg-slate-400 min-w-80 m-5 p-3 rounded-xl shadow-xl">
-        <div className="pb-5">
+      <div className="bg-slate-400 min-w-80 m-5 rounded-xl shadow-xl">
+        <div className="p-3">
           <CardTitle
             handleCardToggle={handleCardToggle}
             title={title}
@@ -27,7 +27,7 @@ const PersonalSectionCard = ({
           />
         </div>
         {isVisible && (
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 p-3">
             {inputsData.map((info) => (
               <InfoInput
                 inputTitle={info.Title}
